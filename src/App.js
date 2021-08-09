@@ -66,9 +66,9 @@ function App() {
   return (
     <div className="App">
 
-      <div className="vh-50 mt6 dt w-100 center bp3-card mw6">
+      <div className="_card_ vh-100 dt w-100 center bp3-card mw6-l mw6-m mw4 pa1 pa0-l pa0-m">
         <div className="dtc v-mid tc black ">
-          <p className="f2 black b tc">My todays task list</p>
+          <p className="f2 black b tc underline">My Today's task list</p>
           <p className="f4 blue b tc mb4"> {new Date().toDateString()} </p>
           {/* <p className="f4 blue b tl"> task added: {todo} </p> */}
           {/* <p className="f4 blue b tl"> task left: {} </p> */}
@@ -77,18 +77,17 @@ function App() {
               <input
                 className="center bp3-input bp3-large bp3-round"
                 type="text"
-                placeholder="Text input"
+                placeholder="Add Your Task"
                 dir="auto"
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
               />
-
               <Button
-                className="_btn_"
+                className="_btn_ b"
                 type="submit"
                 rightIcon="add"
                 intent="success"
-                text="add task"
+                text="Add Task"
                 minimal
                 large
                 disabled={todo === "" ? true : false}
@@ -99,7 +98,7 @@ function App() {
               <div key={idx} className="w-100 center tc pa3 flex items-center">
                 {todoEditing === todo.id ? (
                   <input
-                    className="center bp3-input bp3-large bp3-round"
+                    className="center bp3-input bp3-large bp3-round mw4 mw5-l mw5-m"
                     type="text"
                     placeholder="Text input"
                     dir="auto"
@@ -108,7 +107,7 @@ function App() {
                   />
                 )
                   :
-                  <div className="w-70 f4">
+                  <div className="w-70-l w-70-m w-60 f4">
                     {todo.completed === true ?
                       <span className="strike">{todo.text}</span>
                       :
@@ -117,18 +116,18 @@ function App() {
                   </div>
                 }
 
-                <div className="w-10">
+                <div className="w-10-l w-10-m w-15">
                   <Button
                     className="_btn_"
                     icon={todo.completed === true ? "tick-circle" : "time"}
                     minimal
                     large
-                    disabled={((todo.completed !== false) && (editingText ===''))  ? true : false}
+                    // disabled={((editingText !==''))  ? true : false}
                     intent={todo.completed !== false ? "success" : "primary"}
                     onClick={() => toggleComplete(todo.id)}
                   />
                 </div>
-                <div className="w-10">
+                <div className="w-10-l w-10-m w-15">
                   {todo.id === todoEditing ?
                     <Button
                       className="_btn_"
@@ -153,7 +152,7 @@ function App() {
                   }
 
                 </div>
-                <div className="w-10">
+                <div className="w-10-l w-10-m w-15">
                   <Button
                     className="_btn_"
                     icon="delete"
