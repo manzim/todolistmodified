@@ -1,3 +1,26 @@
 ._btn_ {
   outline: none !important;
 }
+
+.App{
+  background-image: linear-gradient(to right, #8360c3, #2ebf91);
+  height: fit-content;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+.middle {
+  flex-grow: 1;
+  overflow: auto;
+}
+.top {
+ background: lightgreen;
+}
+.bottom {
+ position: relative;
+ background: lightblue;
+}
